@@ -22,7 +22,7 @@ public class DataSyncController {
     @PostMapping("/sync")
     public ResponseEntity<DataSyncLog> syncData(@RequestBody Map<String, String> request) {
         String syncType = request.get("syncType");
-        return ResponseEntity.ok(dataSyncService.syncData(syncType));
+        return ResponseEntity.ok(dataSyncService.syncFromSource(syncType));
     }
 
     @GetMapping("/config")
